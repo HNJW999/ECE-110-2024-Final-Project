@@ -13,16 +13,20 @@ The flow chart for the project is shown as below:
 ![Flowchart Image](Flowchart.png)
 
 **H-Bridge and Car Speed Control**  
-The H-Bridge will be useful for this project as it allows the car to go forward and backward by switching the polarity of the motors. This will be achieved by turning ON and OFF specific nMOSs to change the direction current is flowing to the motor, thus also changing the direction the motor rotates. Car speed control will also be important since from the project description, they want the car to have “variable speed.” This means a way to control the speed of the car is a necessity. Before building the H-Bridge and Car Speed Control, I first designed it on Falstad to ensure its functionality (Figure 1).   
+The H-Bridge will be useful for this project as it allows the car to go forward and backward by switching the polarity of the motors. This will be achieved by turning ON and OFF specific nMOSs to change the direction current is flowing to the motor, thus also changing the direction the motor rotates. Car speed control will also be important since from the project description, they want the car to have “variable speed.” This means a way to control the speed of the car is a necessity. Before building the H-Bridge and Car Speed Control, I first designed it on Falstad to ensure its functionality (Figure 1). 
+
 ![HBridge Schematic](HBridge-Schematic.png)  
+
 Figure 1: H-Bridge with speed control simulated on Falstad Circuit
 
 After ensuring it works, I move on to the breadboard knowing the design works as intended (Figure 2).   
+
 ![HBridge Image](HBridge-Image.jpg) 
 
 Figure 2: H-Bridge and speed control on the breadboard
 
-The nMOS will substitute as the switch in the Falstad simulation. When voltage is high, it closes the loop the inverter is connected to and allows voltage from the battery to go to the inverter. The Gate terminal of the nMOSs in the H-Bridge is configured in a way that only two of the nMOSs will always be ON (allowing power source to motor, and motor to ground), with current still being able to flow through the motors at set polarity. When there is high voltage to the input of the inverter (when the loop is closed), those two nMOSs will turn OFF and the other two nMOSs will turn ON. This results in the current to flow in the opposite direction, thus flipping the polarity of the motors. We have tested these under controlled input conditions and have seen the motors able to go in both directions. Below shows how the H-Bridge works (Figure 3). 
+The nMOS will substitute as the switch in the Falstad simulation. When voltage is high, it closes the loop the inverter is connected to and allows voltage from the battery to go to the inverter. The Gate terminal of the nMOSs in the H-Bridge is configured in a way that only two of the nMOSs will always be ON (allowing power source to motor, and motor to ground), with current still being able to flow through the motors at set polarity. When there is high voltage to the input of the inverter (when the loop is closed), those two nMOSs will turn OFF and the other two nMOSs will turn ON. This results in the current to flow in the opposite direction, thus flipping the polarity of the motors. We have tested these under controlled input conditions and have seen the motors able to go in both directions. Below shows how the H-Bridge works (Figure 3).
+
 ![HBridge Circuit-Diagram](HBridge-Circuit.png) 
 
 Figure 3: Visual demonstration of the function of the H-Bridge
@@ -30,6 +34,7 @@ Figure 3: Visual demonstration of the function of the H-Bridge
 H-Bridge also has an enable input that can be used to disable the motors. By using an nMOS connecting the H-Bridge to ground and supplying a PWM signal (as shown in Figure 1), we can provide motor-speed control functionally to our circuit.
 
 **Microphone and Amplifier**  
+
 ![Amplified Microphone](Amplified-Microphone.png)  
 
 Figure 4: Microphone and Amplifier’s completed sub-circuit
@@ -39,21 +44,31 @@ The microphone is very useful and important in the project. According to the pro
 ![Amplified Microphone Schematic](Amplified-Microphone-Schematic.jpg) 
 
 Figure 5: Amplifier and Microphone Structure  
+
 The microphone is connected with a capacitor which can remove the signals’ DC component before sending a zero-mean microphone signal to the amplifier. At the same time, a resistor is in parallel with the capacitor and this resistor connects with Vs, the voltage provided by the battery. The voltage signal passing through the capacitor will then get into the inverting-amplifier, the backward theory will be explained below.  
-The microphone subcircuit was tested to be successful, as the oscilloscope did detect signal change (Figure 6).  
+The microphone subcircuit was tested to be successful, as the oscilloscope did detect signal change (Figure 6). 
+
 ![Sound Signal](Sound-Signal.jpg)  
-Figure 6: Sound signal detected by the microphone  
+
+Figure 6: Sound signal detected by the microphone
+
 However, as seen in Figure 6, this is very small and hard to detect when the loud clap happens. Therefore, we used the amplifier to effectively amplify the signal from the microphone (Figure 7).   
-![Amplified Sound Signal](Amplified-Sound-Signal.jpg)  
+![Amplified Sound Signal](Amplified-Sound-Signal.jpg) 
+
 Figure 7: Sound signal amplified by the amplifier  
-![Inverting Amplifier](Inverting-Amplifier.png)    
+
+![Inverting Amplifier](Inverting-Amplifier.png)  
+
 Figure 8: Inverting amplifier  
+
 To figure out the gain, we have to do nodal analysis on the circuit in Figure 8\. The current through resistor R1 will be (vin \- 0)/R1. The current through resistor R2 will be (0 \- vo)/R2. Using KCL at the intersecting node, we have: (vin \- 0)/R1 \= (0 \- vo)/R2. Therefore, the gain will be: vo/vin \= \- R2/R1. Utilizing this knowledge, to get the output we wanted (Figure 9), we increased the value of R2 and decreased the value of R1 if necessary. The gain we are using right now is 4.7 with R1 being 10k and R2 being 47k. We also discovered that the noise from the motors can interfere with the microphone, therefore, the gain value is subjected to change. We proposed the addition of a potentiometer to tune the resistance values according to the speed (noise) of the motors.
 
 **Timed Reaction**  
 We want the car to go backwards when it hears a loud clap for only 5 to 10 seconds so this sub-circuit can make it possible. Using knowledge about the RC equation, we can create a circuit that when it senses something (right now is when we press the button but it will be the loud clap in the future), it produce an output that lasts for 5 to 10 seconds  
-![][image9]  
-Figure 9: Timed Reaction completed circuit  
+![Timed-Reaction](Timed-Reaction.png) 
+
+Figure 9: Timed Reaction completed circuit 
+
 This sub-circuit was tested by using the oscilloscope to see the output of the LED. We also changed the capacitor/ resistor value in the charging path to see the changes in time the LED is on since the button is pressed. This allowed us to make the LED lit on for about 10 seconds by changing the capacitance value from 10µF to 100µF. This will help us make the car go backward for ten seconds when a loud clap is detected. The design is really straightforward and we believe we have successfully created a timed reaction circuit (Figure 9).
 
 **Coming Together**  
