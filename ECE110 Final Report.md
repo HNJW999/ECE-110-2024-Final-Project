@@ -10,7 +10,7 @@ For this project, we assigned each of us to different modules. Here is a list of
 | Microphone and Amplifier | Zifeng Chen, Billy Small |
 
 The flow chart for the project is shown as below:  
-![][image1]
+![Flowchart Image](Flowchart.png)
 
 **H-Bridge and Car Speed Control**  
 The H-Bridge will be useful for this project as it allows the car to go forward and backward by switching the polarity of the motors. This will be achieved by turning ON and OFF specific nMOSs to change the direction current is flowing to the motor, thus also changing the direction the motor rotates. Car speed control will also be important since from the project description, they want the car to have “variable speed.” This means a way to control the speed of the car is a necessity. Before building the H-Bridge and Car Speed Control, I first designed it on Falstad to ensure its functionality (Figure 1).   
