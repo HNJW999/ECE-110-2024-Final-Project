@@ -23,19 +23,20 @@ After ensuring it works, I move on to the breadboard knowing the design works as
 Figure 2: H-Bridge and speed control on the breadboard
 
 The nMOS will substitute as the switch in the Falstad simulation. When voltage is high, it closes the loop the inverter is connected to and allows voltage from the battery to go to the inverter. The Gate terminal of the nMOSs in the H-Bridge is configured in a way that only two of the nMOSs will always be ON (allowing power source to motor, and motor to ground), with current still being able to flow through the motors at set polarity. When there is high voltage to the input of the inverter (when the loop is closed), those two nMOSs will turn OFF and the other two nMOSs will turn ON. This results in the current to flow in the opposite direction, thus flipping the polarity of the motors. We have tested these under controlled input conditions and have seen the motors able to go in both directions. Below shows how the H-Bridge works (Figure 3). 
+![HBridge Circuit-Diagram](HBridge-Circuit.png) 
 
 Figure 3: Visual demonstration of the function of the H-Bridge
 
 H-Bridge also has an enable input that can be used to disable the motors. By using an nMOS connecting the H-Bridge to ground and supplying a PWM signal (as shown in Figure 1), we can provide motor-speed control functionally to our circuit.
 
 **Microphone and Amplifier**  
-![HBridge Circuit-Diagram](HBridge-Circuit.png) 
+![Amplified Microphone](Amplified-Microphone.png)  
 
 Figure 4: Microphone and Amplifier’s completed sub-circuit
 
 The microphone is very useful and important in the project. According to the project description, the car should run in the opposite direction after hearing clapping sounds. In order to identify the clapping sounds, the microphone will be used. The amplifier is also important because it could amplify the signal transmitted by the microphone when sound is detected. When the microphone transmits a signal, the amplitude of the signal is quite small, when we amplify the signal, it will be much easier to be detected by the H-Bridge. The microphone itself was tested first. We built the subcircuit of the microphone, and used an oscilloscope to measure the signal when we made sounds near the microphone (Figure 4). The structure of the Microphone and Amplifier is designed like Figure 5\.
 
-![Amplified Microphone](Amplified-Microphone.png) 
+![Amplified Microphone Schematic](Amplified-Microphone-Schematic.png) 
 
 Figure 5: Amplifier and Microphone Structure  
 The microphone is connected with a capacitor which can remove the signals’ DC component before sending a zero-mean microphone signal to the amplifier. At the same time, a resistor is in parallel with the capacitor and this resistor connects with Vs, the voltage provided by the battery. The voltage signal passing through the capacitor will then get into the inverting-amplifier, the backward theory will be explained below.  
