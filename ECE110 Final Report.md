@@ -41,7 +41,7 @@ The microphone is very useful and important in the project. According to the pro
 Figure 5: Amplifier and Microphone Structure  
 The microphone is connected with a capacitor which can remove the signals’ DC component before sending a zero-mean microphone signal to the amplifier. At the same time, a resistor is in parallel with the capacitor and this resistor connects with Vs, the voltage provided by the battery. The voltage signal passing through the capacitor will then get into the inverting-amplifier, the backward theory will be explained below.  
 The microphone subcircuit was tested to be successful, as the oscilloscope did detect signal change (Figure 6).  
-![][image6]  
+![Sound Signal](Sound-Signal.jpg)  
 Figure 6: Sound signal detected by the microphone  
 However, as seen in Figure 6, this is very small and hard to detect when the loud clap happens. Therefore, we used the amplifier to effectively amplify the signal from the microphone (Figure 7).   
 ![][image7]  
