@@ -46,7 +46,7 @@ Figure 6: Sound signal detected by the microphone
 However, as seen in Figure 6, this is very small and hard to detect when the loud clap happens. Therefore, we used the amplifier to effectively amplify the signal from the microphone (Figure 7).   
 ![Amplified Sound Signal](Amplified-Sound-Signal.jpg)  
 Figure 7: Sound signal amplified by the amplifier  
-![][image8]  
+![Inverting Amplifier](Inverting-Amplifier.png)    
 Figure 8: Inverting amplifier  
 To figure out the gain, we have to do nodal analysis on the circuit in Figure 8\. The current through resistor R1 will be (vin \- 0)/R1. The current through resistor R2 will be (0 \- vo)/R2. Using KCL at the intersecting node, we have: (vin \- 0)/R1 \= (0 \- vo)/R2. Therefore, the gain will be: vo/vin \= \- R2/R1. Utilizing this knowledge, to get the output we wanted (Figure 9), we increased the value of R2 and decreased the value of R1 if necessary. The gain we are using right now is 4.7 with R1 being 10k and R2 being 47k. We also discovered that the noise from the motors can interfere with the microphone, therefore, the gain value is subjected to change. We proposed the addition of a potentiometer to tune the resistance values according to the speed (noise) of the motors.
 
