@@ -29,7 +29,7 @@ Figure 3: Visual demonstration of the function of the H-Bridge
 H-Bridge also has an enable input that can be used to disable the motors. By using an nMOS connecting the H-Bridge to ground and supplying a PWM signal (as shown in Figure 1), we can provide motor-speed control functionally to our circuit.
 
 **Microphone and Amplifier**  
-![][image4]  
+![HBridge Circuit-Diagram](HBridge-Circuit.png) 
 Figure 4: Microphone and Amplifier’s completed sub-circuit
 
 The microphone is very useful and important in the project. According to the project description, the car should run in the opposite direction after hearing clapping sounds. In order to identify the clapping sounds, the microphone will be used. The amplifier is also important because it could amplify the signal transmitted by the microphone when sound is detected. When the microphone transmits a signal, the amplitude of the signal is quite small, when we amplify the signal, it will be much easier to be detected by the H-Bridge. The microphone itself was tested first. We built the subcircuit of the microphone, and used an oscilloscope to measure the signal when we made sounds near the microphone (Figure 4). The structure of the Microphone and Amplifier is designed like Figure 5\.
