@@ -44,7 +44,7 @@ The microphone subcircuit was tested to be successful, as the oscilloscope did d
 ![Sound Signal](Sound-Signal.jpg)  
 Figure 6: Sound signal detected by the microphone  
 However, as seen in Figure 6, this is very small and hard to detect when the loud clap happens. Therefore, we used the amplifier to effectively amplify the signal from the microphone (Figure 7).   
-![][image7]  
+![Amplified Sound Signal](Amplified-Sound-Signal.jpg)  
 Figure 7: Sound signal amplified by the amplifier  
 ![][image8]  
 Figure 8: Inverting amplifier  
