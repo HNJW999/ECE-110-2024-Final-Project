@@ -19,6 +19,7 @@ Figure 1: H-Bridge with speed control simulated on Falstad Circuit
 
 After ensuring it works, I move on to the breadboard knowing the design works as intended (Figure 2).   
 ![HBridge Image](HBridge-Image.jpg) 
+
 Figure 2: H-Bridge and speed control on the breadboard
 
 The nMOS will substitute as the switch in the Falstad simulation. When voltage is high, it closes the loop the inverter is connected to and allows voltage from the battery to go to the inverter. The Gate terminal of the nMOSs in the H-Bridge is configured in a way that only two of the nMOSs will always be ON (allowing power source to motor, and motor to ground), with current still being able to flow through the motors at set polarity. When there is high voltage to the input of the inverter (when the loop is closed), those two nMOSs will turn OFF and the other two nMOSs will turn ON. This results in the current to flow in the opposite direction, thus flipping the polarity of the motors. We have tested these under controlled input conditions and have seen the motors able to go in both directions. Below shows how the H-Bridge works (Figure 3). 
