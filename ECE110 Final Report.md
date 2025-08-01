@@ -14,11 +14,11 @@ The flow chart for the project is shown as below:
 
 **H-Bridge and Car Speed Control**  
 The H-Bridge will be useful for this project as it allows the car to go forward and backward by switching the polarity of the motors. This will be achieved by turning ON and OFF specific nMOSs to change the direction current is flowing to the motor, thus also changing the direction the motor rotates. Car speed control will also be important since from the project description, they want the car to have “variable speed.” This means a way to control the speed of the car is a necessity. Before building the H-Bridge and Car Speed Control, I first designed it on Falstad to ensure its functionality (Figure 1).   
-![HBridge Image](HBridge-Schematic.png)  
+![HBridge Schematic](HBridge-Schematic.png)  
 Figure 1: H-Bridge with speed control simulated on Falstad Circuit
 
 After ensuring it works, I move on to the breadboard knowing the design works as intended (Figure 2).   
-![][image3]  
+![HBridge Image](HBridge-Image.jpg) 
 Figure 2: H-Bridge and speed control on the breadboard
 
 The nMOS will substitute as the switch in the Falstad simulation. When voltage is high, it closes the loop the inverter is connected to and allows voltage from the battery to go to the inverter. The Gate terminal of the nMOSs in the H-Bridge is configured in a way that only two of the nMOSs will always be ON (allowing power source to motor, and motor to ground), with current still being able to flow through the motors at set polarity. When there is high voltage to the input of the inverter (when the loop is closed), those two nMOSs will turn OFF and the other two nMOSs will turn ON. This results in the current to flow in the opposite direction, thus flipping the polarity of the motors. We have tested these under controlled input conditions and have seen the motors able to go in both directions. Below shows how the H-Bridge works (Figure 3). 
