@@ -35,7 +35,8 @@ Figure 4: Microphone and Amplifier’s completed sub-circuit
 
 The microphone is very useful and important in the project. According to the project description, the car should run in the opposite direction after hearing clapping sounds. In order to identify the clapping sounds, the microphone will be used. The amplifier is also important because it could amplify the signal transmitted by the microphone when sound is detected. When the microphone transmits a signal, the amplitude of the signal is quite small, when we amplify the signal, it will be much easier to be detected by the H-Bridge. The microphone itself was tested first. We built the subcircuit of the microphone, and used an oscilloscope to measure the signal when we made sounds near the microphone (Figure 4). The structure of the Microphone and Amplifier is designed like Figure 5\.
 
-![][image5]  
+![Amplified Microphone](Amplified-Microphone.png) 
+
 Figure 5: Amplifier and Microphone Structure  
 The microphone is connected with a capacitor which can remove the signals’ DC component before sending a zero-mean microphone signal to the amplifier. At the same time, a resistor is in parallel with the capacitor and this resistor connects with Vs, the voltage provided by the battery. The voltage signal passing through the capacitor will then get into the inverting-amplifier, the backward theory will be explained below.  
 The microphone subcircuit was tested to be successful, as the oscilloscope did detect signal change (Figure 6).  
